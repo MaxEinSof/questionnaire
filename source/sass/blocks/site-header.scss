@@ -1,0 +1,136 @@
+.site-header {
+  padding-top: 30px;
+  padding-bottom: 25px;
+  font-size: 14px;
+  background-color: $white;
+  border-bottom: 1px solid $alt-light-gray;
+
+  button {
+    display: none;
+  }
+}
+
+.site-header__menu {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: -75px;
+
+  li {
+    margin-left: 75px;
+  }
+
+  a {
+    color: $blue;
+    transition: color $transition-time $transition-function;
+
+    &:hover,
+    &:focus {
+      color: $alt-black;
+    }
+  }
+
+  .active {
+    color: $alt-black;
+  }
+}
+
+@include mobile {
+  .site-header {
+    position: relative;
+    padding-top: 25px;
+
+    button {
+      display: block;
+      position: relative;
+      width: 20px;
+      height: 14px;
+      margin-left: auto;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      outline: none;
+
+      span {
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: $black;
+        border-radius: 2px;
+        transition: all $transition-time $transition-function;
+
+        &:nth-child(1) {
+          top: 0;
+          transform-origin: 16%;
+        }
+
+        &:nth-child(2) {
+          top: 6px;
+        }
+
+        &:nth-child(3) {
+          top: 6px;
+          right: 0;
+        }
+
+        &:nth-child(4) {
+          bottom: 0;
+          transform-origin: 16%;
+        }
+      }
+
+      &.menu-opened {
+        span {
+          &:nth-child(1) {
+            width: 25px;
+            transform: rotate(45deg);
+          }
+
+          &:nth-child(2) {
+            transform: rotate(-45deg);
+            background-color: transparent;
+          }
+
+          &:nth-child(3) {
+            transform: rotate(45deg);
+            background-color: transparent;
+          }
+
+          &:nth-child(4) {
+            width: 25px;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+
+  .site-header__menu {
+    position: absolute;
+    top: 100%;
+    right: 100%;
+    width: 100vw;
+    margin-left: 0;
+    padding: 20px 30px 40px 30px;
+    flex-direction: column;
+    background-color: $white;
+    border-bottom: 1px solid $alt-light-gray;
+    transition: right $transition-time $transition-function;
+
+    li {
+      margin-left: 0;
+      margin-bottom: 15px;
+      text-align: center;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &.menu-opened {
+      right: 0
+    }
+  }
+}

@@ -1,0 +1,507 @@
+.profile-form {
+  text-align: center;
+
+  fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  legend {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 49px;
+    font-size: 30px;
+    line-height: 30px;
+    color: $alt-black;
+  }
+
+  .js-Dropdown {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 320px;
+    font-family: $primary-font;
+  }
+
+  .js-Dropdown-title {
+    height: 60px;
+    padding: 18px 20px 5px;
+    font-family: $primary-font;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: $alt-black;
+    border: 1px solid $light-gray;
+    border-radius: 5px;
+    outline: none;
+
+    &:after {
+      top: 25px;
+      right: 19px;
+      width: 13px;
+      height: 8px;
+      background: url("../img/icons/arrow.svg") no-repeat 0 0;
+      border: none;
+      transition: transform $transition-time $transition-function;
+    }
+
+    &.is-open {
+      border-color: $blue;
+
+      &:after {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  .js-Dropdown-list {
+    position: absolute;
+    height: 300px;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    font-size: 20px;
+    line-height: 36px;
+    font-weight: 300;
+    color: $blue;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+
+    li {
+      padding: 0;
+      border: none;
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      &.is-selected {
+        background-color: transparent;
+      }
+
+      &:first-child {
+        display: none;
+      }
+    }
+  }
+
+  .simplebar-track {
+    right: 3px;
+
+    &.simplebar-vertical {
+      width: 8px;
+    }
+  }
+
+  .simplebar-scrollbar {
+    &:before {
+      background-color: $alt-light-gray;
+      opacity: 1;
+    }
+  }
+
+  button[type="submit"] {
+    padding: 15px 32px 17px;
+    border: none;
+    color: $white;
+    background-color: $blue;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+  }
+}
+
+.profile-form__container {
+  position: relative;
+  padding-top: 120px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 47px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 47px;
+    height: 47px;
+  }
+}
+
+.profile-form__personal-info {
+  &::before {
+    background: url("../img/icons/personal-info-icon.svg") no-repeat 0 0;
+  }
+}
+
+.profile-form__experience {
+  &::before {
+    background: url("../img/icons/experience-icon.svg") no-repeat 0 0;
+  }
+}
+
+.profile-form__js {
+  &::before {
+    background: url("../img/icons/js-icon.svg") no-repeat 0 0;
+  }
+}
+
+.profile-form__about {
+  &::before {
+    background: url("../img/icons/about-icon.svg") no-repeat 0 0;
+  }
+}
+
+.profile-form__input {
+  position: relative;
+  margin-bottom: 25px;
+
+  label {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    font-size: 24px;
+    font-weight: 400;
+    color: $gray;
+    transition: top $transition-time $transition-function, font-size $transition-time $transition-function;
+    pointer-events: none;
+  }
+
+  input {
+    width: 100%;
+    max-width: 520px;
+    height: 60px;
+    padding: 18px 20px 5px;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: $alt-black;
+    border: 1px solid $light-gray;
+    border-radius: 5px;
+    outline: none;
+
+    &:focus {
+      border-color: $blue;
+    }
+  }
+
+  &.is-filled {
+    label {
+      top: 2px;
+      font-size: 14px;
+    }
+  }
+}
+
+.profile-form__experience-list {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: -5px;
+  margin-bottom: 80px;
+  line-height: 35px;
+  text-align: left;
+
+  li {
+    width: 210px;
+  }
+
+  label {
+    position: relative;
+    padding-left: 32px;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border: 1px solid $blue;
+      border-radius: 3px;
+    }
+
+    &:hover {
+      &::before {
+        background-color: $light-blue;
+      }
+    }
+  }
+
+  input {
+    &:focus {
+      & + label {
+        &::before {
+          background-color: $light-blue;
+        }
+      }
+    }
+
+    &:checked {
+      & + label {
+        &::before {
+          background-color: $blue;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 5px;
+          left: 4px;
+          width: 12px;
+          height: 8px;
+          background: url("../img/icons/check.svg") no-repeat 0 0;
+        }
+      }
+    }
+  }
+}
+
+.profile-form__proficiency-levels-radiobtns {
+  display: none;
+}
+
+.profile-form__slider {
+  position: relative;
+  margin-top: -4px;
+  margin-bottom: 58px;
+}
+
+.profile-form__proficiency {
+  display: flex;
+  margin-bottom: 14px;
+  font-size: 13px;
+  line-height: 19px;
+  color: $brown;
+  text-align: left;
+}
+
+.profile-form__proficiency-level {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    top: calc(100% + 1px);
+    left: 0;
+    width: 1px;
+    height: 27px;
+
+    background-image:
+      linear-gradient(0deg, $white, $white 100%),
+      linear-gradient(0deg, $alt-gray, $alt-gray 1px, transparent 1px, transparent 3px);
+    background-repeat: no-repeat, repeat;
+    background-position: 0 100%, 0 0;
+  }
+
+  &:nth-child(1) {
+    width: 24.09%;
+
+    &::after {
+      background-size: 1px 5px, 1px 3px;
+    }
+  }
+
+  &:nth-child(2) {
+    width: 25.913%;
+
+    &::after {
+      background-size: 1px 8px, 1px 3px;
+    }
+
+    span {
+      max-width: 130px;
+    }
+  }
+
+  &:nth-child(3) {
+    width: 25.783%;
+
+    &::after {
+      background-size: 1px 10px, 1px 3px;
+    }
+
+    span {
+      max-width: 180px;
+    }
+  }
+
+  &:nth-child(4) {
+    justify-content: flex-end;
+    width: 24.22%;
+
+    &::after {
+      background-size: 1px 16px, 1px 3px;
+    }
+
+    &::after {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  &.active {
+    span {
+      color: $blue;
+      text-shadow: 1px 1px 2px $blue;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  span {
+    cursor: pointer;
+
+    &:hover {
+      color: $alt-gray;
+    }
+  }
+}
+
+.profile-form__track-container {
+  overflow: hidden;
+}
+
+.profile-form__track {
+  height: 14px;
+  background-color: rgba($alt-black, 0.1);
+  transform: rotate(-0.8deg);
+  transform-origin: 100% 0;
+}
+
+.profile-form__track-fill {
+  width: 50%;
+  height: 100%;
+  background-image: linear-gradient(90deg, rgb(204,177,241) 0%, rgb(67,89,147) 100%);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 768px;
+}
+
+.profile-form__thumb {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 23px;
+  height: 26px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: url("../img/icons/thumb.svg") no-repeat 0 0;
+  cursor: pointer;
+}
+
+.profile-form__about {
+  legend {
+    margin-bottom: 14px;
+  }
+
+  p {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 37px;
+    color: $alt-black;
+  }
+
+  textarea {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    height: 180px;
+    margin: 0 auto;
+    margin-bottom: 70px;
+    padding: 18px;
+    font-size: 20px;
+    line-height: 24px;
+    border: 1px solid $light-gray;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+
+    &:focus {
+      border-color: $blue;
+    }
+
+    &::-moz-placeholder {
+      color: $gray;
+    }
+
+    &:-ms-input-placeholder {
+      color: $gray;
+    }
+
+    &::placeholder {
+      color: $gray;
+    }
+  }
+}
+
+@include mobile {
+  .profile-form__experience-list {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+
+  .profile-form__proficiency-levels-radiobtns {
+    @include list-reset;
+    display: block;
+    max-width: 440px;
+    margin: 0 auto;
+    text-align: left;
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      position: relative;
+      padding-left: 32px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $blue;
+        border-radius: 50%;
+      }
+    }
+
+    input:checked {
+      & + label {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 3px;
+          left: 2px;
+          width: 16px;
+          height: 16px;
+          background-color: $blue;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .profile-form__slider {
+    display: none;
+  }
+}

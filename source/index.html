@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Анкета">
+    <title>Анкета</title>
+    <link href="fonts/Roboto.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link href="fonts/Robotolight.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link href="fonts/Robotothin.woff2" rel="preload" as="font" crossorigin="anonymous">
+    <link href="css/style.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="container">
+        <ul class="site-header__menu js-menu">
+          <li>
+            <a class="active" href="#personal-info">Личная информация</a>
+          </li>
+          <li>
+            <a href="#experience">Опыт</a>
+          </li>
+          <li>
+            <a href="#js">JavaScript</a>
+          </li>
+          <li>
+            <a href="#about">О себе</a>
+          </li>
+        </ul>
+        <button class="js-mobile-menu-btn" type="button" aria-label="Кнопка открытия меню">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <div class="container">
+        <h1>Анкета</h1>
+
+        <div class="profile-form">
+          <form action="https://echo.htmlacademy.ru" method="POST">
+            <div class="profile-form__container profile-form__personal-info" id="personal-info">
+              <fieldset>
+                <legend>Личная информация</legend>
+
+                <div class="profile-form__input js-input">
+                  <label for="name">ФИО</label>
+                  <input type="text" name="name" id="name">
+                </div>
+
+                <div class="profile-form__input">
+                  <label for="year-select">Год&nbsp;рождения</label>
+                  <select name="year" id="year-select">
+                    <option value="" default disabled selected></option>
+                    <option value="2002">2002</option>
+                    <option value="2001">2001</option>
+                    <option value="2000">2000</option>
+                    <option value="1999">1999</option>
+                    <option value="1998">1998</option>
+                    <option value="1997">1997</option>
+                    <option value="1996">1996</option>
+                    <option value="1995">1995</option>
+                    <option value="1994">1994</option>
+                    <option value="1993">1993</option>
+                    <option value="1992">1992</option>
+                    <option value="1991">1991</option>
+                    <option value="1990">1990</option>
+                    <option value="1989">1989</option>
+                    <option value="1988">1988</option>
+                    <option value="1987">1987</option>
+                    <option value="1986">1986</option>
+                    <option value="1985">1985</option>
+                    <option value="1984">1984</option>
+                    <option value="1983">1983</option>
+                    <option value="1982">1982</option>
+                    <option value="1981">1981</option>
+                    <option value="1980">1980</option>
+                  </select>
+                </div>
+
+                <div class="profile-form__input js-input">
+                  <label for="residence">Место&nbsp;проживания</label>
+                  <input type="text" name="residence" id="residence">
+                </div>
+
+                <div class="profile-form__input js-input">
+                  <label for="skype">Skype</label>
+                  <input type="text" name="skype" id="skype">
+                </div>
+
+                <div class="profile-form__input js-input">
+                  <label for="email">E-mail</label>
+                  <input type="email" name="email" id="email">
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="profile-form__container profile-form__experience" id="experience">
+              <fieldset>
+                <legend>Расскажите о своем опыте</legend>
+
+                <ul class="profile-form__experience-list">
+                  <li>
+                    <input class="visually-hidden" type="checkbox" name="methodologies" id="methodologies">
+                    <label for="methodologies">БЭМ/OOCSS</label>
+                  </li>
+                  <li>
+                    <input class="visually-hidden" type="checkbox" name="semantics" id="semantics">
+                    <label for="semantics">Верстаю семантично</label>
+                  </li>
+                  <li>
+                    <input class="visually-hidden" type="checkbox" name="webpack" id="webpack">
+                    <label for="webpack">Webpack</label>
+                  </li>
+                  <li>
+                    <input class="visually-hidden" type="checkbox" name="preprocessors" id="preprocessors">
+                    <label for="preprocessors">Stylus/LESS/SASS</label>
+                  </li>
+                  <li>
+                    <input class="visually-hidden" type="checkbox" name="ecmascript" id="ecmascript">
+                    <label for="ecmascript">ES2015/ES2016</label>
+                  </li>
+                  <li>
+                    <input class="visually-hidden" type="checkbox" name="jquery" id="jquery">
+                    <label for="jquery">jQuery</label>
+                  </li>
+                  <li>
+                    <input class="visually-hidden" type="checkbox" name="svg" id="svg">
+                    <label for="svg">Работаю с SVG</label>
+                  </li>
+                  <li>
+                    <input class="visually-hidden" type="checkbox" name="taskrunners" id="taskrunners">
+                    <label for="taskrunners">Gulp/GRUNT</label>
+                  </li>
+                  <li>
+                    <input class="visually-hidden" type="checkbox" name="git" id="git">
+                    <label for="git">Ипользую Git</label>
+                  </li>
+                </ul>
+              </fieldset>
+            </div>
+
+            <div class="profile-form__container profile-form__js" id="js">
+              <fieldset>
+                <legend>Уровень владения JavaScript</legend>
+
+                <ul class="profile-form__proficiency-levels-radiobtns js-radiobtns">
+                  <li>
+                    <input class="visually-hidden" type="radio" name="proficiency-level" id="level-0" value="0">
+                    <label for="level-0">Не владею</label>
+                  </li>
+                  <li>
+                    <input class="visually-hidden" type="radio" name="proficiency-level" id="level-1" value="1">
+                    <label for="level-1">Использую готовые решения</label>
+                  </li>
+                  <li>
+                    <input class="visually-hidden" type="radio" name="proficiency-level" id="level-2" value="2" checked>
+                    <label for="level-2">Использую готовые решения и умею их переделывать</label>
+                  </li>
+                  <li>
+                    <input class="visually-hidden" type="radio" name="proficiency-level" id="level-3" value="3">
+                    <label for="level-3">Пишу сложный JS с нуля</label>
+                  </li>
+                </ul>
+
+                <div class="profile-form__slider js-slider">
+                  <div class="profile-form__proficiency">
+                    <div class="profile-form__proficiency-level js-level">
+                      <span>Не владею</span>
+                    </div>
+                    <div class="profile-form__proficiency-level js-level">
+                      <span>Использую готовые решения</span>
+                    </div>
+                    <div class="profile-form__proficiency-level js-level active">
+                      <span>Использую готовые решения и умею их переделывать</span>
+                    </div>
+                    <div class="profile-form__proficiency-level js-level">
+                      <span>Пишу сложный JS с нуля</span>
+                    </div>
+                  </div>
+                  <div class="profile-form__track-container">
+                    <div class="profile-form__track">
+                      <div class="profile-form__track-fill js-track-fill"></div>
+                    </div>
+                  </div>
+                  <button class="profile-form__thumb js-thumb" type="button" aria-label="Ползунок уровня владения JavaScript"></button>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="profile-form__container profile-form__about" id="about">
+              <fieldset>
+                <legend>Расскажите о себе</legend>
+                <p>Напишите несколько предложений, чем привлекла наша вакансия и что вы ожидаете от работы у нас.</p>
+                <label class="visually-hidden" for="about">Поле ввода рассказа о себе</label>
+                <textarea rows="9" name="about" id="about" placeholder="Понравилась тем, что..."></textarea>
+              </fieldset>
+            </div>
+
+            <button type="submit">Готово</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/vendor.min.js"></script>
+    <script src="js/script.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+// Vendor
+@import "vendor/vanilla-js-dropdown.scss";
+@import "vendor/simplebar";
+
+// Global
+@import "variables.scss";
+@import "mixins.scss";
+@import "normalize.scss";
+@import "global.scss";
+
+// Blocks
+@import "blocks/site-header.scss";
+@import "blocks/site-main.scss";
+@import "blocks/profile-form.scss";

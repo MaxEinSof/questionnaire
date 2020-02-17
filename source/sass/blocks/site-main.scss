@@ -1,0 +1,25 @@
+.site-main {
+  padding-top: 10.34vw;
+  padding-bottom: 74px;
+  background-image: url("../img/bg.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% auto;
+
+  h1 {
+    margin: 0;
+    margin-bottom: 18px;
+    font-size: 70px;
+    line-height: 70px;
+    font-weight: 100;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1170px) {
+  .site-main {
+    padding-top: 121px;
+    background-position: 50% 0;
+    background-size: auto 161px;
+  }
+}
